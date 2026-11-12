@@ -71,6 +71,15 @@
       "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOclpiQnlIYTZ4WXZaeWthaE5jc2JOSGFjclFvMEpxWTdRVG16SklnWVRMZEZ3TTZjdEkwcE9vSngzWWVKZmVMaE1qZzlXRHVVZnhBTTVMd3VPZU9XY2cyMkZZbFdCemdfZXJ5bVNJZGJFT19jdjNNOV9xZ1d5aGlmX1R5NEwySE92bERkbzdCdUVNcVJsNXdsaFBhLUFncTlPNFY0bVZlZGZkWUE?oc=5",
       "text": "🏙️ Народ, «Аврора» изменила сообщение между Ярославлем и Москвой: 3 часа в пути и 800 мест.",
       "published_at": "2026-11-12T21:23:57.923426+00:00"
+    },
+    {
+      "slot": "2026-11-13-01",
+      "post_id": 10,
+      "source": "Google Новости",
+      "title": "В Ярославле началась обкатка трамвайных путей из Дзержинского района до моторного завода - Телеканал ЯПервый",
+      "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNOGpkaU9EcGVkaUZrRTBnbkFET2V3eENzdnZZUUV0NVNjTVJzYzdJYmRNOEFuaE90Nk85eG1jMEtCRERHSGpEelhzdnFoc2ZzUmJHYlRzWkFKLVY2RnlVZnN0UHVid2VTTmY5OVp3T0FjNS1vNlB5UUxUeXlYQ09UTkIxOW9EclduQk1HX2xhTUNQWTVEOXh1QlQ2d01RQmxjLTNTZGJUT21RM0RTTVM4NVM5S2h5Zw?oc=5",
+      "text": "🚌 Народ, в Ярославле началась обкатка трамвайных путей из Дзержинского района до моторного завода.",
+      "published_at": "2026-11-12T22:16:35.544575+00:00"
     }
   ],
   "used_links": [
@@ -80,7 +89,8 @@
     "https://news.google.com/rss/articles/CBMivAFBVV95cUxNQkZvdmZZd3lBRWl3c2FHMTNvdUdUNHgtVnZtSkZIUHBTMEp2MFFrMFAwV0lsQVpPNEIxT1RJRjNlMl9adVEzSUFiUzdQanlNdlRQclhWeFVUaThXcC05b0tUY25pR2xIRDdSdGVEQnhqUURLNGNPS3ZEWXdZYlBnQW40UEVhRFpqMVltanY5X3FHYlFlSUlGSXVJcTRXV2pkNzNCa0JQQXVzd3RySmRIbkFBREV2aDNoVUVqVw",
     "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1HTi0tbl9ZVlViRHBSZ1JjbjU2V1FKMUt5czlsdGpISTVKWkhKanpsVVFESENjVU90Q3Q3endqZHd6a3o5b1VPM3BkYWo5SllYZWczdTVZM3puNnpxeWJIOUhHUGc",
     "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNZkQ5OWh4aHlhMzFuTkNaWERTRFNCbFFoNFFkUGNWUVJnbU12VHNYbzEtc0ItWEFmOTFlRzl5WlhEZzl2NUZZYkxIUFRoLU5aVHFySHhZU0xqb1FnZ2d0R2VWV3NUdWJveDl1cTNUSlRLUVQ2RU5hWWRUY1AwYXQ1Y1NkRzhOV2xULW5QUzZHSU1WSEU5dF82R0x4NjdwQTBFT3NyZkVtdFFhbkdYZHFVMGJGVnFQQ09lYW41UTVZdWxkUQ",
-    "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOclpiQnlIYTZ4WXZaeWthaE5jc2JOSGFjclFvMEpxWTdRVG16SklnWVRMZEZ3TTZjdEkwcE9vSngzWWVKZmVMaE1qZzlXRHVVZnhBTTVMd3VPZU9XY2cyMkZZbFdCemdfZXJ5bVNJZGJFT19jdjNNOV9xZ1d5aGlmX1R5NEwySE92bERkbzdCdUVNcVJsNXdsaFBhLUFncTlPNFY0bVZlZGZkWUE"
+    "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOclpiQnlIYTZ4WXZaeWthaE5jc2JOSGFjclFvMEpxWTdRVG16SklnWVRMZEZ3TTZjdEkwcE9vSngzWWVKZmVMaE1qZzlXRHVVZnhBTTVMd3VPZU9XY2cyMkZZbFdCemdfZXJ5bVNJZGJFT19jdjNNOV9xZ1d5aGlmX1R5NEwySE92bERkbzdCdUVNcVJsNXdsaFBhLUFncTlPNFY0bVZlZGZkWUE",
+    "https://news.google.com/rss/articles/CBMitgFBVV95cUxNOGpkaU9EcGVkaUZrRTBnbkFET2V3eENzdnZZUUV0NVNjTVJzYzdJYmRNOEFuaE90Nk85eG1jMEtCRERHSGpEelhzdnFoc2ZzUmJHYlRzWkFKLVY2RnlVZnN0UHVid2VTTmY5OVp3T0FjNS1vNlB5UUxUeXlYQ09UTkIxOW9EclduQk1HX2xhTUNQWTVEOXh1QlQ2d01RQmxjLTNTZGJUT21RM0RTTVM4NVM5S2h5Zw"
   ],
   "used_tags": [
     "#ЯрославльНаСвязи",
@@ -106,7 +116,10 @@
     "#ЯрославльМатчи",
     "#ЯрославльГород_413994447",
     "#ЯрославльГород_4139944472",
-    "#ЯрославльГород_4139944473"
+    "#ЯрославльГород_4139944473",
+    "#ЯрославльТранспорт",
+    "#ЯрославльАвтобусы",
+    "#ЯрославльМаршруты"
   ],
   "skipped_links": [
     "https://news.google.com/rss/articles/CBMicEFVX3lxTE9vRDhnS3dyanl5dGxBV3lLWFBuWWQ1WW5EanhzaFh4SzVmZWxpYkdhSlBLYVMwWEVlaXFSV09RN2FBUEowZGF5SzZlVjFoNFhzSXZTNjlEbEI1bWRGc3dkRURXa0F6c3hLNWtBeWVINTU"
