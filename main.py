@@ -34,10 +34,10 @@ def slot(now):
 
 def history_load():
     if not HISTORY_FILE.exists():
-        return {"posts": [], "used_links": [], "used_tags": []}
+        return {"posts": [], "used_links": [], "used_tags": [], "skipped_links": []}
     with HISTORY_FILE.open(encoding="utf-8") as f:
         data = json.load(f)
-    return {key: data.get(key, []) for key in ("posts", "used_links", "used_tags")}
+    return {key: data.get(key, []) for key in ("posts", "used_links", "used_tags", "skipped_links")}
 
 
 def history_save(data):
@@ -109,7 +109,7 @@ def read_feed(source, url):
 
 
 def candidates(history, now):
-    used = set(history["used_links"])
+    used = set(history["used_links"]) | set(history["skipped_links"])
     titles = [p.get("title", "") for p in history["posts"]]
     found = []
     for name, feed in FEEDS:
@@ -205,6 +205,9 @@ def main():
     now = datetime.now(timezone.utc)
     time_slot = slot(now)
     h = history_load()
+    if DRY_RUN and os.getenv("GITHUB_EVENT_NAME") == "schedule":
+        logging.info("Тестовый режим: пропускаем автоматический запуск, чтобы не расходовать ИИ API.")
+        return
     if not os.getenv("YAROSLAVL_OPENAI_KEY", "").strip():
         logging.warning("Не указан YAROSLAVL_OPENAI_KEY: настройте GitHub Actions Secret. Публикаций нет.")
         return
@@ -227,6 +230,8 @@ def main():
         message = format_message(draft, h)
         if not message:
             logging.info("Не прошёл проверку: %s", item["title"])
+            if not DRY_RUN:
+                h["skipped_links"].append(url_key(item["link"]))
             continue
         if DRY_RUN:
             logging.info("ТЕСТ — не публикуем. Источник %s: %s\n%s",
@@ -241,6 +246,8 @@ def main():
         history_save(h)
         logging.info("Опубликовано: %s", post_id)
         return
+    if not DRY_RUN:
+        history_save(h)
     logging.info("Нет новых проверенных новостей — ничего не публикуем.")
 
 
