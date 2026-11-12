@@ -1,4 +1,4 @@
-"""VK news bot: Чёткий Ярославль. Dry-run by default. 30 slots/day, no reuse."""
+"""Чёткий Ярославль: VK news autoposter, no AI key required, dry-run by default."""
 import difflib
 import hashlib
 import html
@@ -18,7 +18,6 @@ TZ = ZoneInfo("Europe/Moscow")
 GROUP_ID = "243223029"
 HISTORY_FILE = Path(__file__).with_name("history.json")
 DRY_RUN = os.getenv("DRY_RUN", "true").lower() in ("1", "yes", "true")
-MODEL = os.getenv("YAROSLAVL_OPENAI_MODEL", "gpt-4o-mini")
 FEEDS = [
     ("Городской телеканал", "https://gtk.tv/rss.xml"),
     ("Google Новости", "https://news.google.com/rss/search?q=" + urllib.parse.quote('"Ярославль" when:2d') + "&hl=ru&gl=RU&ceid=RU:ru"),
@@ -133,37 +132,86 @@ def candidates(history, now):
     return sorted(found, key=lambda x: x["published"], reverse=True)
 
 
-def ai_draft(item, history):
-    key = os.getenv("YAROSLAVL_OPENAI_KEY", "").strip()
-    if not key:
-        raise RuntimeError("Нужен Secret YAROSLAVL_OPENAI_KEY")
-    system = (
-        "Ты автор паблика «Чёткий Ярославль». Ответь ТОЛЬКО валидным JSON-объектом: "
-        '{"publish":true/false,"sentence":"...","hashtags":["#...","#...","#..."]}. '
-        "Прочитай заголовок и краткое описание. Пропускай публикацию, если сведения не относятся "
-        "именно к городу Ярославлю или событие уже было опубликовано (в том числе пересказанное другим СМИ). "
-        "Если недостаточно фактов, пропусти. Никаких вымышленных подробностей, дат, имён или цифр. "
-        "Если публикуешь — строго одно короткое русское предложение до 32 слов, начинай с уместного "
-        "эмодзи, обращайся по-дружески: «Братва», «Пацаны», «Народ», «Родные», меняй обращения. "
-        "Лёгкий юмор допустим, но не над трагедиями, жертвами или преступлениями. "
-        "Затем придумай ровно 3 тематических НОВЫХ хэштега, каждый с основой «Ярослав»; "
-        "не повторяй ни один из ранее использованных. Не переписывай заголовок дословно. "
-        "Если решение пропустить, верни publish=false, sentence='', hashtags=[]."
-    )
-    user = {"news": {k: item[k] for k in ("source", "title", "description", "link")},
-            "previous_news_titles": [p.get("title", "") for p in history["posts"][-220:]],
-            "previous_hashtags": history["used_tags"][-900:]}
-    payload = {"model": MODEL, "response_format": {"type": "json_object"}, "messages": [
-        {"role": "system", "content": system},
-        {"role": "user", "content": json.dumps(user, ensure_ascii=False)}]}
-    req = urllib.request.Request(
-        "https://api.openai.com/v1/chat/completions",
-        data=json.dumps(payload, ensure_ascii=False).encode("utf-8"),
-        headers={"Content-Type": "application/json", "Authorization": "Bearer " + key})
-    with urllib.request.urlopen(req, timeout=55) as resp:
-        answer = json.loads(resp.read().decode("utf-8"))
-    return json.loads(answer["choices"][0]["message"]["content"])
+TOPICS = {
+    "Дороги": ("дорог", "асфальт", "перекры", "движен", "пробк", "ремонт трасс", "объезд", "дтп", "авари"),
+    "Транспорт": ("автобус", "трамва", "троллейбус", "маршрут", "электробус", "транспорт", "останов"),
+    "ЖКХ": ("жкх", "коммун", "отоплен", "водоснаб", "отключ", "электроснаб", "тариф", "водопров"),
+    "Город": ("благоустрой", "парк", "сквер", "площади", "набережн", "двор", "фонтан", "улиц"),
+    "Цены": ("цен", "подорож", "подешев", "стоимост", "проезд", "тариф"),
+    "Культура": ("фестивал", "концерт", "выстав", "театр", "музе", "праздник"),
+    "Спорт": ("спортив", "матч", "побед", "хоккей", "футбол", "волейбол", "соревнован"),
+    "Образование": ("школ", "учител", "экзамен", "университет", "студент", "детсад"),
+    "Происшествия": ("пожар", "полици", "спасател", "происшеств", "задержан", "преступлен"),
+}
+TAG_VARIANTS = {
+    "Дороги": ("Дороги", "ЗаРулём", "Движение", "Объезды", "Ремонт", "ДорожнаяОбстановка"),
+    "Транспорт": ("Транспорт", "Автобусы", "Маршруты", "Остановки", "ОбщественныйТранспорт"),
+    "ЖКХ": ("ЖКХ", "Коммуналка", "Квитанции", "ГородскиеСети", "Услуги"),
+    "Город": ("Город", "НашГород", "ГородскаяЖизнь", "Районы", "Благоустройство"),
+    "Цены": ("Цены", "Кошелёк", "Расходы", "Тарифы", "Покупки"),
+    "Культура": ("Афиша", "События", "Культура", "КудаСходить", "Досуг"),
+    "Спорт": ("Спорт", "Команды", "Матчи", "НашиСпортсмены"),
+    "Образование": ("Образование", "Школы", "Учёба", "Студенты"),
+    "Происшествия": ("Происшествия", "Службы", "Безопасность", "Сводка"),
+}
+SENSITIVE = ("погиб", "смерт", "убит", "пострадав", "ребёнк", "детей", "взрыв", "суицид", "насили")
+BANNED = ("?", "!", "фото", "видео", "шок", "не поверите", "ужас", "подробности", "смотрите")
 
+
+def offline_draft(item, history):
+    """Conservative RSS-title transformation: no invented facts or paid AI."""
+    title = clean_text(item["title"])
+    # Strip common syndication source suffix, but preserve titles with meaningful dashes.
+    title = re.sub(r"\s+-\s+[^-]{3,50}$", "", title)
+    lower = title.casefold()
+    if (not 35 <= len(title) <= 190 or any(x in lower for x in BANNED)
+            or len(re.findall(r"[.!?](?:\s|$)", title)) > 1):
+        return {"publish": False}
+    # An oblast-wide headline is not automatically about the city.
+    if "ярославской области" in lower and not re.search(r"в ярославле|городе ярославле", lower):
+        return {"publish": False}
+    if not re.search(r"ярославл|брагино", lower):
+        return {"publish": False}
+    if any(title_duplicate(title, p.get("title", "")) for p in history["posts"]):
+        return {"publish": False}
+
+    topic = next((topic for topic, words in TOPICS.items() if any(w in lower for w in words)), "Город")
+    sensitive = any(word in lower for word in SENSITIVE)
+    seed = int(hashlib.sha256(item["link"].encode("utf-8")).hexdigest()[:8], 16)
+    if sensitive or topic == "Происшествия":
+        prefix, emoji = "Народ", "⚠️"
+    else:
+        prefix = ("Братва", "Пацаны", "Родные", "Народ", "Городские")[seed % 5]
+        emoji = {"Дороги": "🚧", "Транспорт": "🚌", "ЖКХ": "💸", "Город": "🏙️",
+                 "Цены": "💰", "Культура": "🎭", "Спорт": "🏆", "Образование": "📚"}.get(topic, "📰")
+    # Keep all original factual words. Only prepend a conversational opener.
+    first = title[0].lower() + title[1:] if title[0] in "ВНСОПКТЭ" else title
+    sentence = f"{emoji} {prefix}, {first.rstrip(' .!?…')}" + "."
+    if len(sentence.split()) > 35 or len(sentence) > 290:
+        return {"publish": False}
+
+    used = {tag.casefold() for tag in history["used_tags"]}
+    options = TAG_VARIANTS.get(topic, TAG_VARIANTS["Город"])
+    tags = []
+    for suffix in options:
+        tag = "#Ярославль" + suffix
+        if tag.casefold() not in used:
+            tags.append(tag)
+        if len(tags) == 3:
+            break
+    if len(tags) < 3:
+        # Topic-specific suffix plus unique story ID keeps tags new indefinitely.
+        digest = hashlib.sha256(item["link"].encode()).hexdigest()[:9]
+        for suffix in options:
+            for n in range(1, 30):
+                tag = f"#Ярославль{suffix}_{digest}{n if n > 1 else ''}"
+                if tag.casefold() not in used and tag not in tags:
+                    tags.append(tag)
+                if len(tags) == 3:
+                    break
+            if len(tags) == 3:
+                break
+    return {"publish": True, "sentence": sentence, "hashtags": tags}
 
 def format_message(draft, history):
     if not draft.get("publish"):
@@ -206,10 +254,7 @@ def main():
     time_slot = slot(now)
     h = history_load()
     if DRY_RUN and os.getenv("GITHUB_EVENT_NAME") == "schedule":
-        logging.info("Тестовый режим: пропускаем автоматический запуск, чтобы не расходовать ИИ API.")
-        return
-    if not os.getenv("YAROSLAVL_OPENAI_KEY", "").strip():
-        logging.warning("Не указан YAROSLAVL_OPENAI_KEY: настройте GitHub Actions Secret. Публикаций нет.")
+        logging.info("Тестовый режим: автоматические публикации отключены.")
         return
     if not DRY_RUN and not os.getenv("YAROSLAVL_VK_TOKEN", "").strip():
         logging.warning("Не указан YAROSLAVL_VK_TOKEN: реальный постинг отключён.")
@@ -222,11 +267,7 @@ def main():
         return
     feed_items = candidates(h, now)
     for item in feed_items[:8]:
-        try:
-            draft = ai_draft(item, h)
-        except Exception as exc:
-            logging.error("ИИ не смог обработать новость: %s", exc)
-            raise
+        draft = offline_draft(item, h)
         message = format_message(draft, h)
         if not message:
             logging.info("Не прошёл проверку: %s", item["title"])
