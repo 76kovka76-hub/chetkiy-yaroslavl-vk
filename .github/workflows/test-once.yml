@@ -1,0 +1,44 @@
+name: Чёткий Ярославль — один тестовый пост ВК
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/test-once.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: chetkiy-yaroslavl-vk-publisher
+  cancel-in-progress: false
+
+jobs:
+  test-post:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+      - name: Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Run offline checks
+        run: python -m unittest -v test_bot.py
+      - name: Publish exactly one connection check in VK
+        env:
+          YAROSLAVL_VK_TOKEN: ${{ secrets.YAROSLAVL_VK_TOKEN }}
+        run: python test_post_once.py
+      - name: Record posted message to prevent duplicates
+        if: success()
+        run: |
+          if [[ -n "$(git status --porcelain history.json)" ]]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add history.json
+            git commit -m "Record first real VK connection test post"
+            git pull --rebase
+            git push
+          fi
