@@ -46,6 +46,32 @@ class NewsBotTests(unittest.TestCase):
         }
         self.assertIsNone(main.format_message(bad, {"used_tags": []}))
 
+    def test_offline_post_has_real_headline_and_three_tags(self):
+        item = {"title": "В Ярославле перекроют дорогу на улице Ленина из-за ремонта",
+                "link": "https://example.com/story/42"}
+        history = {"posts": [], "used_tags": []}
+        draft = main.offline_draft(item, history)
+        self.assertTrue(draft["publish"])
+        self.assertIn("Ярославле перекроют дорогу", draft["sentence"])
+        self.assertEqual(len(draft["hashtags"]), 3)
+        self.assertIsNotNone(main.format_message(draft, history))
+
+    def test_regional_news_does_not_automatically_become_city_news(self):
+        item = {"title": "В Ярославской области открыли новую дорогу за городом",
+                "link": "https://example.com/region"}
+        self.assertFalse(main.offline_draft(item, {"posts": [], "used_tags": []})["publish"])
+
+    def test_offline_tags_change_if_used(self):
+        item = {"title": "В Ярославле открыли ремонтируемый участок дороги для машин",
+                "link": "https://example.com/local/22"}
+        history = {"posts": [], "used_tags": []}
+        first = main.offline_draft(item, history)
+        self.assertTrue(first["publish"])
+        history["used_tags"] = first["hashtags"]
+        second = main.offline_draft(item, history)
+        self.assertTrue(second["publish"])
+        self.assertFalse(set(first["hashtags"]) & set(second["hashtags"]))
+
     def test_default_dry_run(self):
         self.assertTrue(main.DRY_RUN)
 
