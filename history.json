@@ -62,6 +62,15 @@
       "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNZkQ5OWh4aHlhMzFuTkNaWERTRFNCbFFoNFFkUGNWUVJnbU12VHNYbzEtc0ItWEFmOTFlRzl5WlhEZzl2NUZZYkxIUFRoLU5aVHFySHhZU0xqb1FnZ2d0R2VWV3NUdWJveDl1cTNUSlRLUVQ2RU5hWWRUY1AwYXQ1Y1NkRzhOV2xULW5QUzZHSU1WSEU5dF82R0x4NjdwQTBFT3NyZkVtdFFhbkdYZHFVMGJGVnFQQ09lYW41UTVZdWxkUQ?oc=5",
       "text": "🏆 Городские, в Ярославле около школы №88 открыли спортивную площадку для занятий физкультурой и семейного досуга.",
       "published_at": "2026-11-12T20:28:40.047176+00:00"
+    },
+    {
+      "slot": "2026-11-13-00",
+      "post_id": 9,
+      "source": "Google Новости",
+      "title": "«Аврора» изменила сообщение между Ярославлем и Москвой: 3 часа в пути и 800 мест - Телеканал ЯПервый",
+      "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOclpiQnlIYTZ4WXZaeWthaE5jc2JOSGFjclFvMEpxWTdRVG16SklnWVRMZEZ3TTZjdEkwcE9vSngzWWVKZmVMaE1qZzlXRHVVZnhBTTVMd3VPZU9XY2cyMkZZbFdCemdfZXJ5bVNJZGJFT19jdjNNOV9xZ1d5aGlmX1R5NEwySE92bERkbzdCdUVNcVJsNXdsaFBhLUFncTlPNFY0bVZlZGZkWUE?oc=5",
+      "text": "🏙️ Народ, «Аврора» изменила сообщение между Ярославлем и Москвой: 3 часа в пути и 800 мест.",
+      "published_at": "2026-11-12T21:23:57.923426+00:00"
     }
   ],
   "used_links": [
@@ -70,7 +79,8 @@
     "https://news.google.com/rss/articles/CBMijwFBVV95cUxPSkJwWTduekVyZG9CeUFmZktaSkhOZnd2bFp5aEUtSkJXRkVlQ0d5dUNESmdnNnZPTHI3cjkxV3lsMVM4aUQtYUNiQ1dtYTdnZDAxNkE4dFZDU19HU2pwai1abVVmUjI3RkJ1N1JJZDV0MWNxQm5zbFViQ1NTRnFfUkVJOUxacEdzRmdNaHN4TQ",
     "https://news.google.com/rss/articles/CBMivAFBVV95cUxNQkZvdmZZd3lBRWl3c2FHMTNvdUdUNHgtVnZtSkZIUHBTMEp2MFFrMFAwV0lsQVpPNEIxT1RJRjNlMl9adVEzSUFiUzdQanlNdlRQclhWeFVUaThXcC05b0tUY25pR2xIRDdSdGVEQnhqUURLNGNPS3ZEWXdZYlBnQW40UEVhRFpqMVltanY5X3FHYlFlSUlGSXVJcTRXV2pkNzNCa0JQQXVzd3RySmRIbkFBREV2aDNoVUVqVw",
     "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1HTi0tbl9ZVlViRHBSZ1JjbjU2V1FKMUt5czlsdGpISTVKWkhKanpsVVFESENjVU90Q3Q3endqZHd6a3o5b1VPM3BkYWo5SllYZWczdTVZM3puNnpxeWJIOUhHUGc",
-    "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNZkQ5OWh4aHlhMzFuTkNaWERTRFNCbFFoNFFkUGNWUVJnbU12VHNYbzEtc0ItWEFmOTFlRzl5WlhEZzl2NUZZYkxIUFRoLU5aVHFySHhZU0xqb1FnZ2d0R2VWV3NUdWJveDl1cTNUSlRLUVQ2RU5hWWRUY1AwYXQ1Y1NkRzhOV2xULW5QUzZHSU1WSEU5dF82R0x4NjdwQTBFT3NyZkVtdFFhbkdYZHFVMGJGVnFQQ09lYW41UTVZdWxkUQ"
+    "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNZkQ5OWh4aHlhMzFuTkNaWERTRFNCbFFoNFFkUGNWUVJnbU12VHNYbzEtc0ItWEFmOTFlRzl5WlhEZzl2NUZZYkxIUFRoLU5aVHFySHhZU0xqb1FnZ2d0R2VWV3NUdWJveDl1cTNUSlRLUVQ2RU5hWWRUY1AwYXQ1Y1NkRzhOV2xULW5QUzZHSU1WSEU5dF82R0x4NjdwQTBFT3NyZkVtdFFhbkdYZHFVMGJGVnFQQ09lYW41UTVZdWxkUQ",
+    "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOclpiQnlIYTZ4WXZaeWthaE5jc2JOSGFjclFvMEpxWTdRVG16SklnWVRMZEZ3TTZjdEkwcE9vSngzWWVKZmVMaE1qZzlXRHVVZnhBTTVMd3VPZU9XY2cyMkZZbFdCemdfZXJ5bVNJZGJFT19jdjNNOV9xZ1d5aGlmX1R5NEwySE92bERkbzdCdUVNcVJsNXdsaFBhLUFncTlPNFY0bVZlZGZkWUE"
   ],
   "used_tags": [
     "#ЯрославльНаСвязи",
@@ -93,7 +103,10 @@
     "#ЯрославльЦены_094381329",
     "#ЯрославльСпорт",
     "#ЯрославльКоманды",
-    "#ЯрославльМатчи"
+    "#ЯрославльМатчи",
+    "#ЯрославльГород_413994447",
+    "#ЯрославльГород_4139944472",
+    "#ЯрославльГород_4139944473"
   ],
   "skipped_links": [
     "https://news.google.com/rss/articles/CBMicEFVX3lxTE9vRDhnS3dyanl5dGxBV3lLWFBuWWQ1WW5EanhzaFh4SzVmZWxpYkdhSlBLYVMwWEVlaXFSV09RN2FBUEowZGF5SzZlVjFoNFhzSXZTNjlEbEI1bWRGc3dkRURXa0F6c3hLNWtBeWVINTU"
