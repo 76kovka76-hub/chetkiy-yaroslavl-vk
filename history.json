@@ -8,13 +8,27 @@
       "title": "Проверка связи",
       "text": "👋 Братва, проверяем связь — кто из какого района Ярославля, пишите в комменты!",
       "published_at": "2026-11-12T15:16:05.259107+00:00"
+    },
+    {
+      "slot": "2026-11-12-23",
+      "post_id": 3,
+      "source": "Google Новости",
+      "title": "В Ярославле отдали под суд рецидивиста, изрисовавшего дома рекламой наркотиков - YarNews",
+      "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNbnc5anRtRmUtdVE3OFVtSTVZVkhMN2dseEREekJxVXdnejRvNmhuMlREa0FpQmxSRGlyaVRpU0N5ZmtRdjVReHdaV21FZ0ExcTdKTHBHQzBjcDdkNWI5bjFMT3F5SnR1WVQ5cVh1dTI2aGs0LXlaRWNsUGZJY05UTmdtTkF4RnE2WGpPTk8wVXphbEhjNndzR1NUR0Vuc0c2RVJNZ2IteVl0OWxEVEhJak5VWXQ5TGs?oc=5",
+      "text": "🏙️ Городские, в Ярославле отдали под суд рецидивиста, изрисовавшего дома рекламой наркотиков.",
+      "published_at": "2026-11-12T15:39:51.898805+00:00"
     }
   ],
-  "used_links": [],
+  "used_links": [
+    "https://news.google.com/rss/articles/CBMitwFBVV95cUxNbnc5anRtRmUtdVE3OFVtSTVZVkhMN2dseEREekJxVXdnejRvNmhuMlREa0FpQmxSRGlyaVRpU0N5ZmtRdjVReHdaV21FZ0ExcTdKTHBHQzBjcDdkNWI5bjFMT3F5SnR1WVQ5cVh1dTI2aGs0LXlaRWNsUGZJY05UTmdtTkF4RnE2WGpPTk8wVXphbEhjNndzR1NUR0Vuc0c2RVJNZ2IteVl0OWxEVEhJak5VWXQ5TGs"
+  ],
   "used_tags": [
     "#ЯрославльНаСвязи",
     "#ЯрославльЗнакомимся",
-    "#ЯрославльНашЧат"
+    "#ЯрославльНашЧат",
+    "#ЯрославльГород",
+    "#ЯрославльНашГород",
+    "#ЯрославльГородскаяЖизнь"
   ],
   "skipped_links": []
 }
