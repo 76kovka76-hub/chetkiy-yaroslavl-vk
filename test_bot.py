@@ -1,5 +1,5 @@
 import unittest
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 import main
 
 
@@ -9,11 +9,11 @@ class NewsBotTests(unittest.TestCase):
 
     def test_thirty_slots_per_day(self):
         keys = set()
-        for hour in range(24):
-            for minute in range(60):
-                d = datetime(2026, 11, 12, hour, minute, tzinfo=timezone.utc)
-                keys.add(main.slot(d))
-        self.assertTrue(all(key.endswith(f"-{i:02d}") for i, key in enumerate(sorted(keys))))
+        start = datetime(2026, 11, 11, 21, tzinfo=timezone.utc)  # Moscow 00:00
+        for minute in range(24 * 60):
+            keys.add(main.slot(start + timedelta(minutes=minute)))
+        self.assertEqual(len(keys), 30)
+        self.assertEqual(sorted(keys), [f"2026-11-12-{i:02d}" for i in range(30)])
 
     def test_url_tracking_removes_parameters(self):
         a = main.url_key("https://www.example.ru/news/story/?utm_source=vk")
