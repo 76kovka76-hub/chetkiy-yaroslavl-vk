@@ -35,12 +35,22 @@
       "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPSkJwWTduekVyZG9CeUFmZktaSkhOZnd2bFp5aEUtSkJXRkVlQ0d5dUNESmdnNnZPTHI3cjkxV3lsMVM4aUQtYUNiQ1dtYTdnZDAxNkE4dFZDU19HU2pwai1abVVmUjI3RkJ1N1JJZDV0MWNxQm5zbFViQ1NTRnFfUkVJOUxacEdzRmdNaHN4TQ?oc=5",
       "text": "🏙️ Родные, в Ярославле на улицу Нахимсона привезли скульптуры киногероев - https://soroka-news.ru/.",
       "published_at": "2026-11-12T17:39:44.683890+00:00"
+    },
+    {
+      "slot": "2026-11-12-26",
+      "post_id": 6,
+      "source": "Google Новости",
+      "title": "В музее-заповеднике Ярославля в ноябре вторично зацвёл волчеягодник из-за тёплой осени - Телеканал ЯПервый",
+      "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNQkZvdmZZd3lBRWl3c2FHMTNvdUdUNHgtVnZtSkZIUHBTMEp2MFFrMFAwV0lsQVpPNEIxT1RJRjNlMl9adVEzSUFiUzdQanlNdlRQclhWeFVUaThXcC05b0tUY25pR2xIRDdSdGVEQnhqUURLNGNPS3ZEWXdZYlBnQW40UEVhRFpqMVltanY5X3FHYlFlSUlGSXVJcTRXV2pkNzNCa0JQQXVzd3RySmRIbkFBREV2aDNoVUVqVw?oc=5",
+      "text": "🎭 Городские, в музее-заповеднике Ярославля в ноябре вторично зацвёл волчеягодник из-за тёплой осени.",
+      "published_at": "2026-11-12T18:34:03.333182+00:00"
     }
   ],
   "used_links": [
     "https://news.google.com/rss/articles/CBMitwFBVV95cUxNbnc5anRtRmUtdVE3OFVtSTVZVkhMN2dseEREekJxVXdnejRvNmhuMlREa0FpQmxSRGlyaVRpU0N5ZmtRdjVReHdaV21FZ0ExcTdKTHBHQzBjcDdkNWI5bjFMT3F5SnR1WVQ5cVh1dTI2aGs0LXlaRWNsUGZJY05UTmdtTkF4RnE2WGpPTk8wVXphbEhjNndzR1NUR0Vuc0c2RVJNZ2IteVl0OWxEVEhJak5VWXQ5TGs",
     "https://news.google.com/rss/articles/CBMilAFBVV95cUxPUGR5MVpQRkRETG5WMmwyZUdYMERPZ2ZSTG9QbndHUFRIN0F1YzhfNWpEdlhJYngybWNTUWJIRnBBU3BrNldJLW9TMU9YVUZCZjNrYXpPZ2RIcFl6RHZHUTI5c2RZWnJUZWZYSGM1cHdCUGRJNjg3VDJ6dkRxZkdhSmlIUDFWSEVqb0JRekVrMTVVSUNF",
-    "https://news.google.com/rss/articles/CBMijwFBVV95cUxPSkJwWTduekVyZG9CeUFmZktaSkhOZnd2bFp5aEUtSkJXRkVlQ0d5dUNESmdnNnZPTHI3cjkxV3lsMVM4aUQtYUNiQ1dtYTdnZDAxNkE4dFZDU19HU2pwai1abVVmUjI3RkJ1N1JJZDV0MWNxQm5zbFViQ1NTRnFfUkVJOUxacEdzRmdNaHN4TQ"
+    "https://news.google.com/rss/articles/CBMijwFBVV95cUxPSkJwWTduekVyZG9CeUFmZktaSkhOZnd2bFp5aEUtSkJXRkVlQ0d5dUNESmdnNnZPTHI3cjkxV3lsMVM4aUQtYUNiQ1dtYTdnZDAxNkE4dFZDU19HU2pwai1abVVmUjI3RkJ1N1JJZDV0MWNxQm5zbFViQ1NTRnFfUkVJOUxacEdzRmdNaHN4TQ",
+    "https://news.google.com/rss/articles/CBMivAFBVV95cUxNQkZvdmZZd3lBRWl3c2FHMTNvdUdUNHgtVnZtSkZIUHBTMEp2MFFrMFAwV0lsQVpPNEIxT1RJRjNlMl9adVEzSUFiUzdQanlNdlRQclhWeFVUaThXcC05b0tUY25pR2xIRDdSdGVEQnhqUURLNGNPS3ZEWXdZYlBnQW40UEVhRFpqMVltanY5X3FHYlFlSUlGSXVJcTRXV2pkNzNCa0JQQXVzd3RySmRIbkFBREV2aDNoVUVqVw"
   ],
   "used_tags": [
     "#ЯрославльНаСвязи",
@@ -54,7 +64,10 @@
     "#ЯрославльРасходы",
     "#ЯрославльРайоны",
     "#ЯрославльБлагоустройство",
-    "#ЯрославльГород_e06688552"
+    "#ЯрославльГород_e06688552",
+    "#ЯрославльАфиша",
+    "#ЯрославльСобытия",
+    "#ЯрославльКультура"
   ],
   "skipped_links": []
 }
