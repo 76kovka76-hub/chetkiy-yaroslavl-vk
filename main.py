@@ -14,6 +14,8 @@ from email.utils import parsedate_to_datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
+from engagement import game_draft
+
 TZ = ZoneInfo("Europe/Moscow")
 GROUP_ID = "243223029"
 HISTORY_FILE = Path(__file__).with_name("history.json")
@@ -286,9 +288,27 @@ def main():
         history_save(h)
         logging.info("Опубликовано: %s", post_id)
         return
+    # No publishable fresh news: engage subscribers with a short, non-repeating
+    # question. Games share the same 30-post daily limit and 48-minute slots.
+    game = game_draft(h, now)
+    if game:
+        message = format_message(game, h)
+        if message:
+            if DRY_RUN:
+                logging.info("ТЕСТ — интерактивный пост, не публикуем:\n%s", message)
+                return
+            post_id = post_vk(message, time_slot)
+            h["posts"].append({"slot": time_slot, "post_id": post_id,
+                               "kind": "game", "game_key": game["game_key"],
+                               "title": "Вопрос подписчикам", "text": game["sentence"],
+                               "published_at": now.isoformat()})
+            h["used_tags"].extend(message.split("\n\n")[1].split())
+            history_save(h)
+            logging.info("Опубликована игра: %s", post_id)
+            return
     if not DRY_RUN:
         history_save(h)
-    logging.info("Нет новых проверенных новостей — ничего не публикуем.")
+    logging.info("Нет новых новостей и нет подходящего интерактивного поста для этого слота.")
 
 
 if __name__ == "__main__":
