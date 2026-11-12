@@ -19,7 +19,6 @@ GROUP_ID = "243223029"
 HISTORY_FILE = Path(__file__).with_name("history.json")
 DRY_RUN = os.getenv("DRY_RUN", "true").lower() in ("1", "yes", "true")
 FEEDS = [
-    ("Городской телеканал", "https://gtk.tv/rss.xml"),
     ("Google Новости", "https://news.google.com/rss/search?q=" + urllib.parse.quote('"Ярославль" when:2d') + "&hl=ru&gl=RU&ceid=RU:ru"),
     ("Google Новости — город", "https://news.google.com/rss/search?q=" + urllib.parse.quote('"в Ярославле" when:2d') + "&hl=ru&gl=RU&ceid=RU:ru"),
 ]
