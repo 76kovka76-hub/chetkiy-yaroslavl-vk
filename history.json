@@ -26,11 +26,21 @@
       "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPUGR5MVpQRkRETG5WMmwyZUdYMERPZ2ZSTG9QbndHUFRIN0F1YzhfNWpEdlhJYngybWNTUWJIRnBBU3BrNldJLW9TMU9YVUZCZjNrYXpPZ2RIcFl6RHZHUTI5c2RZWnJUZWZYSGM1cHdCUGRJNjg3VDJ6dkRxZkdhSmlIUDFWSEVqb0JRekVrMTVVSUNF?oc=5",
       "text": "💰 Городские, в Ярославле на три ночи перекроют Республиканский проезд.",
       "published_at": "2026-11-12T16:44:31.859553+00:00"
+    },
+    {
+      "slot": "2026-11-12-25",
+      "post_id": 5,
+      "source": "Google Новости",
+      "title": "В Ярославле на улицу Нахимсона привезли скульптуры киногероев - https://soroka-news.ru/",
+      "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPSkJwWTduekVyZG9CeUFmZktaSkhOZnd2bFp5aEUtSkJXRkVlQ0d5dUNESmdnNnZPTHI3cjkxV3lsMVM4aUQtYUNiQ1dtYTdnZDAxNkE4dFZDU19HU2pwai1abVVmUjI3RkJ1N1JJZDV0MWNxQm5zbFViQ1NTRnFfUkVJOUxacEdzRmdNaHN4TQ?oc=5",
+      "text": "🏙️ Родные, в Ярославле на улицу Нахимсона привезли скульптуры киногероев - https://soroka-news.ru/.",
+      "published_at": "2026-11-12T17:39:44.683890+00:00"
     }
   ],
   "used_links": [
     "https://news.google.com/rss/articles/CBMitwFBVV95cUxNbnc5anRtRmUtdVE3OFVtSTVZVkhMN2dseEREekJxVXdnejRvNmhuMlREa0FpQmxSRGlyaVRpU0N5ZmtRdjVReHdaV21FZ0ExcTdKTHBHQzBjcDdkNWI5bjFMT3F5SnR1WVQ5cVh1dTI2aGs0LXlaRWNsUGZJY05UTmdtTkF4RnE2WGpPTk8wVXphbEhjNndzR1NUR0Vuc0c2RVJNZ2IteVl0OWxEVEhJak5VWXQ5TGs",
-    "https://news.google.com/rss/articles/CBMilAFBVV95cUxPUGR5MVpQRkRETG5WMmwyZUdYMERPZ2ZSTG9QbndHUFRIN0F1YzhfNWpEdlhJYngybWNTUWJIRnBBU3BrNldJLW9TMU9YVUZCZjNrYXpPZ2RIcFl6RHZHUTI5c2RZWnJUZWZYSGM1cHdCUGRJNjg3VDJ6dkRxZkdhSmlIUDFWSEVqb0JRekVrMTVVSUNF"
+    "https://news.google.com/rss/articles/CBMilAFBVV95cUxPUGR5MVpQRkRETG5WMmwyZUdYMERPZ2ZSTG9QbndHUFRIN0F1YzhfNWpEdlhJYngybWNTUWJIRnBBU3BrNldJLW9TMU9YVUZCZjNrYXpPZ2RIcFl6RHZHUTI5c2RZWnJUZWZYSGM1cHdCUGRJNjg3VDJ6dkRxZkdhSmlIUDFWSEVqb0JRekVrMTVVSUNF",
+    "https://news.google.com/rss/articles/CBMijwFBVV95cUxPSkJwWTduekVyZG9CeUFmZktaSkhOZnd2bFp5aEUtSkJXRkVlQ0d5dUNESmdnNnZPTHI3cjkxV3lsMVM4aUQtYUNiQ1dtYTdnZDAxNkE4dFZDU19HU2pwai1abVVmUjI3RkJ1N1JJZDV0MWNxQm5zbFViQ1NTRnFfUkVJOUxacEdzRmdNaHN4TQ"
   ],
   "used_tags": [
     "#ЯрославльНаСвязи",
@@ -41,7 +51,10 @@
     "#ЯрославльГородскаяЖизнь",
     "#ЯрославльЦены",
     "#ЯрославльКошелёк",
-    "#ЯрославльРасходы"
+    "#ЯрославльРасходы",
+    "#ЯрославльРайоны",
+    "#ЯрославльБлагоустройство",
+    "#ЯрославльГород_e06688552"
   ],
   "skipped_links": []
 }
