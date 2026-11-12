@@ -27,12 +27,14 @@ ID группы **243223029 уже указан в `main.py`**, отдельны
 
 Для сохранения истории: GitHub → Settings → Actions → General → Workflow permissions → **Read and write permissions**. [Прямая ссылка](https://github.com/76kovka76-hub/chetkiy-yaroslavl-vk/settings/actions).
 
-## Пробный запуск
-1. В [workflow](https://github.com/76kovka76-hub/chetkiy-yaroslavl-vk/blob/main/.github/workflows/publish.yml) сейчас `DRY_RUN: "true"`. Это **тестовый режим без публикаций в ВК**.
-2. Откройте [Actions](https://github.com/76kovka76-hub/chetkiy-yaroslavl-vk/actions/workflows/publish.yml) → **Run workflow**. Скрипт бесплатно ищет новости и пишет пробный пост в лог.
-3. Проверьте результат: достоверность исходного заголовка, формат текста, локальную привязку и три хэштега.
-4. После проверки для включения постинга поменяйте `DRY_RUN: "true"` на `DRY_RUN: "false"` в workflow. Записи пойдут в группу при наличии новых новостей и действительного ключа.
-5. Проверьте публикации в [ВК](https://vk.ru/club243223029) и обновления [истории](https://github.com/76kovka76-hub/chetkiy-yaroslavl-vk/blob/main/history.json).
+## Статус: автопубликация включена
+- В [workflow](https://github.com/76kovka76-hub/chetkiy-yaroslavl-vk/blob/main/.github/workflows/publish.yml) установлено `DRY_RUN: "false"`: новые запуски могут **публиковать реальные записи в VK**.
+- Запуск по расписанию каждые ~5 минут, но не более одного поста в 48-минутный слот и 30 в московские сутки.
+- `Run workflow` также запускает **реальный постинг**, если подошло время и есть новая новость. Используйте осторожно.
+- [Логи GitHub Actions](https://github.com/76kovka76-hub/chetkiy-yaroslavl-vk/actions/workflows/publish.yml) показывают `Опубликовано: <post_id>` после успешной отправки.
+- [История публикаций](https://github.com/76kovka76-hub/chetkiy-yaroslavl-vk/blob/main/history.json) хранит отправленные сообщения и ссылки.
+- Чтобы временно остановить постинг, поменяйте `DRY_RUN: "false"` обратно на `DRY_RUN: "true"` или отключите workflow в GitHub Actions.
+- **Запуск №14** проверил 10 тестов и создал корректный пробный текст; **право токена ВК на публикацию проверится только при первой реальной отправке**.
 
 ## Ограничения бесплатной версии
 - Без ИИ это короткая **шаблонная подача реального заголовка**, а не свободный пересказ от человека.
