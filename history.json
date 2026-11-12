@@ -17,10 +17,20 @@
       "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNbnc5anRtRmUtdVE3OFVtSTVZVkhMN2dseEREekJxVXdnejRvNmhuMlREa0FpQmxSRGlyaVRpU0N5ZmtRdjVReHdaV21FZ0ExcTdKTHBHQzBjcDdkNWI5bjFMT3F5SnR1WVQ5cVh1dTI2aGs0LXlaRWNsUGZJY05UTmdtTkF4RnE2WGpPTk8wVXphbEhjNndzR1NUR0Vuc0c2RVJNZ2IteVl0OWxEVEhJak5VWXQ5TGs?oc=5",
       "text": "🏙️ Городские, в Ярославле отдали под суд рецидивиста, изрисовавшего дома рекламой наркотиков.",
       "published_at": "2026-11-12T15:39:51.898805+00:00"
+    },
+    {
+      "slot": "2026-11-12-24",
+      "post_id": 4,
+      "source": "Google Новости",
+      "title": "В Ярославле на три ночи перекроют Республиканский проезд - Яркуб",
+      "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPUGR5MVpQRkRETG5WMmwyZUdYMERPZ2ZSTG9QbndHUFRIN0F1YzhfNWpEdlhJYngybWNTUWJIRnBBU3BrNldJLW9TMU9YVUZCZjNrYXpPZ2RIcFl6RHZHUTI5c2RZWnJUZWZYSGM1cHdCUGRJNjg3VDJ6dkRxZkdhSmlIUDFWSEVqb0JRekVrMTVVSUNF?oc=5",
+      "text": "💰 Городские, в Ярославле на три ночи перекроют Республиканский проезд.",
+      "published_at": "2026-11-12T16:44:31.859553+00:00"
     }
   ],
   "used_links": [
-    "https://news.google.com/rss/articles/CBMitwFBVV95cUxNbnc5anRtRmUtdVE3OFVtSTVZVkhMN2dseEREekJxVXdnejRvNmhuMlREa0FpQmxSRGlyaVRpU0N5ZmtRdjVReHdaV21FZ0ExcTdKTHBHQzBjcDdkNWI5bjFMT3F5SnR1WVQ5cVh1dTI2aGs0LXlaRWNsUGZJY05UTmdtTkF4RnE2WGpPTk8wVXphbEhjNndzR1NUR0Vuc0c2RVJNZ2IteVl0OWxEVEhJak5VWXQ5TGs"
+    "https://news.google.com/rss/articles/CBMitwFBVV95cUxNbnc5anRtRmUtdVE3OFVtSTVZVkhMN2dseEREekJxVXdnejRvNmhuMlREa0FpQmxSRGlyaVRpU0N5ZmtRdjVReHdaV21FZ0ExcTdKTHBHQzBjcDdkNWI5bjFMT3F5SnR1WVQ5cVh1dTI2aGs0LXlaRWNsUGZJY05UTmdtTkF4RnE2WGpPTk8wVXphbEhjNndzR1NUR0Vuc0c2RVJNZ2IteVl0OWxEVEhJak5VWXQ5TGs",
+    "https://news.google.com/rss/articles/CBMilAFBVV95cUxPUGR5MVpQRkRETG5WMmwyZUdYMERPZ2ZSTG9QbndHUFRIN0F1YzhfNWpEdlhJYngybWNTUWJIRnBBU3BrNldJLW9TMU9YVUZCZjNrYXpPZ2RIcFl6RHZHUTI5c2RZWnJUZWZYSGM1cHdCUGRJNjg3VDJ6dkRxZkdhSmlIUDFWSEVqb0JRekVrMTVVSUNF"
   ],
   "used_tags": [
     "#ЯрославльНаСвязи",
@@ -28,7 +38,10 @@
     "#ЯрославльНашЧат",
     "#ЯрославльГород",
     "#ЯрославльНашГород",
-    "#ЯрославльГородскаяЖизнь"
+    "#ЯрославльГородскаяЖизнь",
+    "#ЯрославльЦены",
+    "#ЯрославльКошелёк",
+    "#ЯрославльРасходы"
   ],
   "skipped_links": []
 }
