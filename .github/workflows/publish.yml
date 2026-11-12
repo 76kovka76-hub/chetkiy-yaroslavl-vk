@@ -27,27 +27,20 @@ jobs:
           python-version: "3.12"
       - name: Validate bot locally
         run: python -m unittest -v test_bot.py
-      - name: Check secrets are configured (manual test)
+      - name: Check VK secret is configured (manual test)
         if: github.event_name == 'workflow_dispatch'
         env:
           YAROSLAVL_VK_TOKEN: ${{ secrets.YAROSLAVL_VK_TOKEN }}
-          YAROSLAVL_OPENAI_KEY: ${{ secrets.YAROSLAVL_OPENAI_KEY }}
         shell: bash
         run: |
           if [[ -z "$YAROSLAVL_VK_TOKEN" ]]; then
             echo "::error::Missing YAROSLAVL_VK_TOKEN repository secret"
             exit 1
           fi
-          if [[ -z "$YAROSLAVL_OPENAI_KEY" ]]; then
-            echo "::error::Missing YAROSLAVL_OPENAI_KEY repository secret"
-            exit 1
-          fi
-          echo "Both required secret values are configured (credentials not printed)."
-      - name: Find and prepare Yaroslavl news
+          echo "Required VK token is present (secret value not printed)."
+      - name: Find and prepare Yaroslavl news (free offline generator)
         env:
           YAROSLAVL_VK_TOKEN: ${{ secrets.YAROSLAVL_VK_TOKEN }}
-          YAROSLAVL_OPENAI_KEY: ${{ secrets.YAROSLAVL_OPENAI_KEY }}
-          YAROSLAVL_OPENAI_MODEL: gpt-4o-mini
           DRY_RUN: "true"
         run: python main.py
       - name: Save publication history
