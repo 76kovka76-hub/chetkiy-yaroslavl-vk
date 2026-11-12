@@ -1,6 +1,7 @@
 import unittest
 from datetime import datetime, timedelta, timezone
 import main
+from engagement import game_draft, MAX_GAMES_PER_DAY
 
 
 class NewsBotTests(unittest.TestCase):
@@ -71,6 +72,48 @@ class NewsBotTests(unittest.TestCase):
         second = main.offline_draft(item, history)
         self.assertTrue(second["publish"])
         self.assertFalse(set(first["hashtags"]) & set(second["hashtags"]))
+
+    def test_game_prompt_can_replace_missing_news(self):
+        now = datetime(2026, 11, 12, 9, 15, tzinfo=timezone.utc)  # 12:15 Moscow
+        h = {"posts": [], "used_tags": []}
+        game = game_draft(h, now)
+        self.assertIsNotNone(game)
+        self.assertTrue(any(word in game["sentence"].casefold() for word in ("братва", "пацаны", "народ", "родные")))
+        self.assertEqual(len(game["hashtags"]), 3)
+        self.assertIsNotNone(main.format_message(game, h))
+
+    def test_game_not_sent_at_night(self):
+        now = datetime(2026, 11, 12, 1, 0, tzinfo=timezone.utc)  # 04:00 Moscow
+        self.assertIsNone(game_draft({"posts": [], "used_tags": []}, now))
+
+    def test_game_daily_limit(self):
+        now = datetime(2026, 11, 12, 18, tzinfo=timezone.utc)  # 21:00 Moscow
+        game_posts = [{"kind": "game", "slot": f"2026-11-12-{i:02d}",
+                       "game_key": f"some_{i}",
+                       "published_at": datetime(2026, 11, 12, i, tzinfo=timezone.utc).isoformat()}
+                      for i in range(MAX_GAMES_PER_DAY)]
+        self.assertIsNone(game_draft({"posts": game_posts, "used_tags": []}, now))
+
+    def test_game_cooldown(self):
+        now = datetime(2026, 11, 12, 9, 15, tzinfo=timezone.utc)
+        game_posts = [{"kind": "game", "slot": "2026-11-12-15",
+                       "game_key": "introductions",
+                       "published_at": (now - timedelta(minutes=45)).isoformat()}]
+        self.assertIsNone(game_draft({"posts": game_posts, "used_tags": []}, now))
+
+    def test_game_no_repeat_and_new_hashtags(self):
+        now = datetime(2026, 11, 12, 9, 15, tzinfo=timezone.utc)
+        h = {"posts": [], "used_tags": []}
+        first = game_draft(h, now)
+        h["posts"] = [{"kind": "game", "slot": "2026-11-12-00",
+                       "game_key": first["game_key"],
+                       "published_at": (now - timedelta(days=1)).isoformat()}]
+        h["used_tags"] = first["hashtags"]
+        second = game_draft(h, now)
+        self.assertIsNotNone(second)
+        self.assertNotEqual(first["game_key"], second["game_key"])
+        self.assertFalse(set(first["hashtags"]) & set(second["hashtags"]))
+        self.assertIsNotNone(main.format_message(second, h))
 
     def test_default_dry_run(self):
         self.assertTrue(main.DRY_RUN)
