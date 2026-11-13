@@ -191,27 +191,10 @@ def offline_draft(item, history):
     if len(sentence.split()) > 35 or len(sentence) > 290:
         return {"publish": False}
 
-    used = {tag.casefold() for tag in history["used_tags"]}
+    # Reuse readable topic tags instead of adding hashes, numbers or IDs.
     options = TAG_VARIANTS.get(topic, TAG_VARIANTS["Город"])
-    tags = []
-    for suffix in options:
-        tag = "#Ярославль" + suffix
-        if tag.casefold() not in used:
-            tags.append(tag)
-        if len(tags) == 3:
-            break
-    if len(tags) < 3:
-        # Topic-specific suffix plus unique story ID keeps tags new indefinitely.
-        digest = hashlib.sha256(item["link"].encode()).hexdigest()[:9]
-        for suffix in options:
-            for n in range(1, 30):
-                tag = f"#Ярославль{suffix}_{digest}{n if n > 1 else ''}"
-                if tag.casefold() not in used and tag not in tags:
-                    tags.append(tag)
-                if len(tags) == 3:
-                    break
-            if len(tags) == 3:
-                break
+    start = seed % len(options)
+    tags = ["#Ярославль" + options[(start + i) % len(options)] for i in range(3)]
     return {"publish": True, "sentence": sentence, "hashtags": tags}
 
 def format_message(draft, history):
@@ -225,11 +208,11 @@ def format_message(draft, history):
         return None
     if len(re.findall(r"[.!?…](?:\s|$)", sentence)) > 1:
         return None
-    if any(not isinstance(t, str) or not re.fullmatch(r"#[А-Яа-яЁёA-Za-z0-9_]+", t)
+    if any(not isinstance(t, str) or not re.fullmatch(r"#[А-Яа-яЁёA-Za-z]+", t)
            or "ярослав" not in t.casefold() for t in tags):
         return None
     lowered = [x.casefold() for x in tags]
-    if len(set(lowered)) != 3 or set(lowered) & {x.casefold() for x in history["used_tags"]}:
+    if len(set(lowered)) != 3:
         return None
     return sentence + "\n\n" + " ".join(tags)
 

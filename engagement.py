@@ -101,14 +101,6 @@ def game_draft(history, now):
         return hashlib.sha256((today + "|" + p[0]).encode("utf-8")).hexdigest()
     key, sentence, topic, _ = min(options, key=order)
 
-    used = {x.casefold() for x in history.get("used_tags", [])}
-    tags = []
-    for suffix in (topic, "Общение", "Комменты"):
-        stem = "#Ярославль" + suffix
-        candidate = stem
-        n = 1
-        while candidate.casefold() in used or candidate.casefold() in {x.casefold() for x in tags}:
-            candidate = f"{stem}_{local:%d%m%y}_{n}"
-            n += 1
-        tags.append(candidate)
+    # Reusable human-readable hashtags; never append numeric identifiers.
+    tags = ["#Ярославль" + suffix for suffix in (topic, "Общение", "Комменты")]
     return {"publish": True, "sentence": sentence, "hashtags": tags, "game_key": key}
