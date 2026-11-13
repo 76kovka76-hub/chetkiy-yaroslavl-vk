@@ -24,7 +24,7 @@ jobs:
         with:
           python-version: "3.12"
       - name: Validate bot locally
-        run: python -m unittest -v test_bot.py
+        run: python -m unittest -v test_bot.py test_news_quality.py
       - name: Check VK secret is configured (manual test)
         if: github.event_name == 'workflow_dispatch'
         env:
