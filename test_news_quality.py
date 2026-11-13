@@ -1,5 +1,6 @@
 """Text-only editorial gate tests, all offline."""
 import unittest
+import main
 from news_quality import is_self_contained_news, mentions_missing_media, source_url
 
 
