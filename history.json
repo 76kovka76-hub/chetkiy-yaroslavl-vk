@@ -377,6 +377,15 @@
       "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPeThZdDRJeEgyNnBCR2dZVkNHRDh6OUcxTUtIMmlaNWtCa0YyLXdBNlhZdlRHVDNTYkRjSnVCWmtSUG55d21LeXF3UEUzemlmd045RHRHclkxdUU2cGtmMlRxcWdEUmJYd0RGMF9aVTdrc25wNVB1QWxaLVpGYVpsdXFyQXZrSTJPWjJINjhMYXhxUFptSEV2ZUhKOHQycVlD?oc=5",
       "text": "🏙️ Родные, в Ярославле сняли фильм о драматической юности символиста Константина Бальмонта.",
       "published_at": "2026-11-14T05:25:03.685732+00:00"
+    },
+    {
+      "slot": "2026-11-14-11",
+      "post_id": 44,
+      "source": "Google Новости",
+      "title": "«Читай-город» попал под статью об ЛГБТ в Ярославле - NEWS.ru",
+      "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1wVUJyb3dNSnp1c2g5NzE1SUZqRmh3c0JBWlRTdktoYmJjQ0htbEtacmFMSElOaG5ZbFowelI4SW44eW1reGZTSEZEdnEwZWl3RlFoVFlGNzhhejRFb3pyUXBLMkJ5eENKYThBM3YtOFFaQXdGT1RqbG5BcjZhdHPSAYQBQVVfeXFMT000dUt5UUxkMEltX2lMWC1FREkwTEQ3WEhSekdLZnhUVFMwQlZiVXFnb09kUElWd2gzSW0zQlJHY3diZ0lGVjk3alhPVUFoaGQtS1ZPRk1QWWhLNTc5ZWJUdjAtcDBncXBmQm1sMXVyMTk5TEhSckl3TlRwWjd6cS0zaVo1?oc=5",
+      "text": "🏙️ Городские, «Читай-город» попал под статью об ЛГБТ в Ярославле.",
+      "published_at": "2026-11-14T06:20:41.606796+00:00"
     }
   ],
   "used_links": [
@@ -420,7 +429,8 @@
     "https://news.google.com/rss/articles/CBMivgFBVV95cUxQRG9DNVVzTEVvMDZGazVKZkhLUWM2ckwxNFpGZ0VRa3NoanIyYUU5VE9fZExUV211b29zY05fUlQzV1lvN2Fwai1ueEdaUzVabENXUU5NQUNpYlU3dTBlQmhLNzBEZEdzcGJoM18yQWxrOElGa1RNQ1hMNnV4Vk1hS2hEdWxLOFRDbWhsN2RkVTB5NlBuY0tMbzJULU5jVk12QUVOZjZqRjktUUE2RHhkcFBhMlV4QTBTT19Jenpn",
     "https://news.google.com/rss/articles/CBMigAFBVV95cUxOeVB4SzV5RUFGb2NXbVdxMFRwQ2VaNUg3ZDgwbGlEZ1JncWpoc3hUMzQ5TWNkcmY0UGstcTJiazBUQWFMZmNCUG0yWlBtSVhMYWJReXltdG80TEFaZlZhRjEwQVNMdHlsQlAtaXhaMG5vSmt4OUY2bFhrZWs5YUpHSA",
     "https://news.google.com/rss/articles/CBMimwFBVV95cUxQNGdnaEUyOHhraWg1MGE1MS1Sd0luNlU0R21NME1wMEJLTFlsT044MGNlTHU0T1E5aUZaaU40RWJWdy1GMHpJbzFnNG5WcmsyN3M5MGtsVlZiLWdCUWZZc2dmaHdNVDRuRHNFdldxTHZwZENiWTVCeUlxUV9VM3liTU1UMlJFNkg0TFJ1Ql9FQkpKejRtOXlhUV9qSQ",
-    "https://news.google.com/rss/articles/CBMioAFBVV95cUxPeThZdDRJeEgyNnBCR2dZVkNHRDh6OUcxTUtIMmlaNWtCa0YyLXdBNlhZdlRHVDNTYkRjSnVCWmtSUG55d21LeXF3UEUzemlmd045RHRHclkxdUU2cGtmMlRxcWdEUmJYd0RGMF9aVTdrc25wNVB1QWxaLVpGYVpsdXFyQXZrSTJPWjJINjhMYXhxUFptSEV2ZUhKOHQycVlD"
+    "https://news.google.com/rss/articles/CBMioAFBVV95cUxPeThZdDRJeEgyNnBCR2dZVkNHRDh6OUcxTUtIMmlaNWtCa0YyLXdBNlhZdlRHVDNTYkRjSnVCWmtSUG55d21LeXF3UEUzemlmd045RHRHclkxdUU2cGtmMlRxcWdEUmJYd0RGMF9aVTdrc25wNVB1QWxaLVpGYVpsdXFyQXZrSTJPWjJINjhMYXhxUFptSEV2ZUhKOHQycVlD",
+    "https://news.google.com/rss/articles/CBMif0FVX3lxTE1wVUJyb3dNSnp1c2g5NzE1SUZqRmh3c0JBWlRTdktoYmJjQ0htbEtacmFMSElOaG5ZbFowelI4SW44eW1reGZTSEZEdnEwZWl3RlFoVFlGNzhhejRFb3pyUXBLMkJ5eENKYThBM3YtOFFaQXdGT1RqbG5BcjZhdHPSAYQBQVVfeXFMT000dUt5UUxkMEltX2lMWC1FREkwTEQ3WEhSekdLZnhUVFMwQlZiVXFnb09kUElWd2gzSW0zQlJHY3diZ0lGVjk3alhPVUFoaGQtS1ZPRk1QWWhLNTc5ZWJUdjAtcDBncXBmQm1sMXVyMTk5TEhSckl3TlRwWjd6cS0zaVo1"
   ],
   "used_tags": [
     "#ЯрославльНаСвязи",
@@ -548,7 +558,10 @@
     "#ЯрославльРайоны",
     "#ЯрославльГородскаяЖизнь",
     "#ЯрославльРайоны",
-    "#ЯрославльБлагоустройство"
+    "#ЯрославльБлагоустройство",
+    "#ЯрославльБлагоустройство",
+    "#ЯрославльГород",
+    "#ЯрославльНашГород"
   ],
   "skipped_links": [
     "https://news.google.com/rss/articles/CBMicEFVX3lxTE9vRDhnS3dyanl5dGxBV3lLWFBuWWQ1WW5EanhzaFh4SzVmZWxpYkdhSlBLYVMwWEVlaXFSV09RN2FBUEowZGF5SzZlVjFoNFhzSXZTNjlEbEI1bWRGc3dkRURXa0F6c3hLNWtBeWVINTU",
